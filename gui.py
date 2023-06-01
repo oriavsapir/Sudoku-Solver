@@ -6,10 +6,13 @@ def solve_board():
     print("---- Original Board ----")
     solver.print_board(input_board)
 
-    solver.solve_sudoku(input_board)
+    
+    if solver.solve_sudoku(input_board):
+        print("Sudoku solution:")
+        solver.print_board(input_board)
+    else:
+        print("No solution exists for the given Sudoku puzzle.")
 
-    print("---- Solved Board ----")
-    solver.print_board(input_board)
     window.destroy()
 
 def validate_input(value):
